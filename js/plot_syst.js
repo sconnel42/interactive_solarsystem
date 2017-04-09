@@ -103,9 +103,13 @@ function compute () {
     }
 
 }
+var doanimate = false;
+
 // Update graph
 function update () {
-    compute();    
+    if(doanimate) {
+        compute();
+    }    
 
     Plotly.animate('graph', {
 	data: [{x: x, y: y}]
@@ -122,12 +126,9 @@ function update () {
     requestAnimationFrame(update);
 }
 
-//doanimate = false;
-
 function toggle_animate () {
-    doanimate = true;   
+    doanimate = !doanimate;   
 }
-//if(doanimate) {
-    requestAnimationFrame(update);
-//}
+
+requestAnimationFrame(update);
 

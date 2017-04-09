@@ -19,3 +19,13 @@ $("#deg").on("slide", function(slideEvt) {
     $("#degSliderVal").text(slideEvt.value);
 });
 
+$('#evolve').click(function() {
+    if($("#evolve").val() == "1") {
+        $("#evolve").text('Start Evolution');
+        $("#evolve").val("0");
+    }
+    else {
+        $("#evolve").text('Stop Evolution');
+        $("#evolve").val("1");
+    }
+})
