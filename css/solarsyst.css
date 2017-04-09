@@ -24,7 +24,7 @@ html,body
     background-color: #adfcff;
     height: 100%;
 }
-#earth {
+.earth {
     width: 100px;
     height: 100px;
     background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSkTGPoUUCldyllFXwBIWbEMEuaEHpkiZP7PkQgqkGFj8xhMF1H);

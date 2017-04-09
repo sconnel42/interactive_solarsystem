@@ -17,6 +17,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.1.0/bootstrap-slider.js"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/bootstrap-slider.js"></script>
     <link rel="stylesheet" href="css/solarsyst.css">
+    <style>
+	#div1 {
+	    width: 350px;
+	    height: 70px;
+	    padding: 10px;
+	    border: 1px solid #aaaaaa;
+	}
+      #info {
+          background-color: black;
+          color: white;
+          padding: 25px 50px;
+      }
+    </style>
 </head>
 <body>
 
@@ -26,7 +39,7 @@
         <nav class="navbar navbar-fixed-left" role="navigation">
             <ul style="width: 100%;">
                 <h3 style="color: white;">Insert New Body</h3>
-                <div id="earth" style="margin-left: auto; margin-right: auto;"></div>
+                <div id="planet1" class="earth" style="margin-left: auto; margin-right: auto;" draggable="true" ondragstart="drag(event)"></div>
                 <li><a href="#">Mass</a>
                 <br>
 		        <input id="m1" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="10000" data-slider-step="10" data-slider-value="50" />
@@ -63,10 +76,13 @@
                 <div class="row">
                     <h1>Solar System Evolution</h1>
                     <div style="border: 2px solid black">
-                    <div id="graph"></div>
+                        <div id="graph"></div>
                     </div>
                     <br>
                     <button type="button" id="evolve" value="0" class="btn btn-primary" onclick="toggle_animate();">Start Evolution</button>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <br>
+                    <div id="info"></div>
                 </div>
             </div>
         <div class="col-lg-1"></div>
