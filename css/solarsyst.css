@@ -1,0 +1,72 @@
+html,body
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+#builder-container
+{
+    display:block;
+    background-color: #ccc;
+    height:100%;
+    padding:5px;
+    margin-bottom:5px;
+}
+.col-sm-4
+{
+    background-color: #000000;
+    height: 100%;
+    bottom: 0;
+}
+.col-sm-8
+{
+    background-color: #adfcff;
+    height: 100%;
+}
+#earth {
+    width: 100px;
+    height: 100px;
+    background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSkTGPoUUCldyllFXwBIWbEMEuaEHpkiZP7PkQgqkGFj8xhMF1H);
+    border-radius: 50%;
+    background-size: 210px;
+    box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
+        inset -3px 0 6px 2px rgba(128, 128, 128, 0.2);
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from { background-position-x: 0px; }
+  to { background-position-x: 210px; }
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+span {
+    color: white;
+    font-size: 16px;
+}
+
+a {
+    font-size: 24px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+input {
+    width: 100%;
+}
+
+.center-block {
+    margin:0 auto; /*It will center the block*/
+    float:none;
+    text-align:center; /*It will center the content inside block*/
+ }
+
