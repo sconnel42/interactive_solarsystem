@@ -72,6 +72,29 @@ function isMouseInBox(e) {
 // PageX and PageY will getting position values and show them in P
 function tellPos(p){
   var info = document.getElementById('info');
-  info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
+  //info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
+  var textbox = document.getElementById('gbox');
+  
+  var boxX = textbox.offsetLeft;
+  var boxY = textbox.offsetTop;
+  var boxWidth = textbox.offsetWidth;
+  var boxHeight = textbox.offsetHeight;
+  var boxMidX = ((2.0*boxX)+boxWidth)/2.0;
+  var boxMidY = ((2.0*boxY)+boxHeight)/2.0;
+
+  // Mouse position comes from the 'mousemove' event
+  var mouseX = p.pageX;
+  var mouseY = p.pageY;
+  var info = document.getElementById('info');
+  if(mouseX>=boxX && mouseX<=boxX+boxWidth) {
+    if(mouseY>=boxY && mouseY<=boxY+boxHeight){
+       // Mouse is in the box
+       var myx = p.pageX-boxMidX;
+       var myy = p.pageY-boxMidY;
+       info.innerHTML = 'Position X : ' + myx + '<br />Position Y : ' + myy;
+    }
+  }
+  //info.innerHTML = 'Position X : inf <br />Position Y : inf';
 }
+
 addEventListener('mousemove', tellPos, false);
