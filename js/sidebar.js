@@ -74,23 +74,21 @@ function tellPos(p){
   var info = document.getElementById('info');
   //info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
   var textbox = document.getElementById('gbox');
-  
-  var boxX = textbox.offsetLeft;
-  var boxY = textbox.offsetTop;
-  var boxWidth = textbox.offsetWidth;
-  var boxHeight = textbox.offsetHeight;
-  var boxMidX = ((2.0*boxX)+boxWidth)/2.0;
-  var boxMidY = ((2.0*boxY)+boxHeight)/2.0;
-
+ 
+  var rect = textbox.getBoundingClientRect();
+  console.log(rect);
+  var midX = (rect.right+rect.left)/2.0;
+  var midY = (rect.bottom+rect.top)/2.0;
+  console.log(rect);
   // Mouse position comes from the 'mousemove' event
   var mouseX = p.pageX;
   var mouseY = p.pageY;
   var info = document.getElementById('info');
-  if(mouseX>=boxX && mouseX<=boxX+boxWidth) {
-    if(mouseY>=boxY && mouseY<=boxY+boxHeight){
+  if(mouseX>=rect.left && mouseX<=rect.right) {
+    if(mouseY>=rect.top && mouseY<=rect.bottom){
        // Mouse is in the box
-       var myx = p.pageX-boxMidX;
-       var myy = p.pageY-boxMidY;
+       var myx = (mouseX-midX)*(6.0/rect.width); // converted to AU
+       var myy = -1.0*(mouseY-midY)*(6.0/rect.height); // y-axis is flipped on webpages
        info.innerHTML = 'Position X : ' + myx + '<br />Position Y : ' + myy;
     }
   }
