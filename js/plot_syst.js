@@ -51,7 +51,8 @@ Plotly.plot('graph', [{
 	showgrid: false,
 	zeroline: false,
 	showline: false,
-	autotick: true,
+	autotick: false,
+        fixedrange: true,
 	ticks: "",
 	showticklabels: false
     },
@@ -60,11 +61,21 @@ Plotly.plot('graph', [{
 	showgrid: false,
 	zeroline: false,
 	showline: false,
-	autotick: true,
+	autotick: false,
+        fixedrange: true,
 	ticks: "",
 	showticklabels: false
-    }
+    },
+    autosize: true,
+    /*margin: {
+        l: 100,
+        r: 0,
+        t: 0,
+        b: 0,
+        pad: 0
+   }*/
 })
+
 
 function forces (i, j) {
     var dx = x[j]-x[i];
@@ -76,10 +87,10 @@ function forces (i, j) {
     var fy = Math.sin(theta)*f;
     return [fx, fy];
 }
-// Computations done during update --> Remove all of this
+// Computations done during update
 function compute () {
     var ts = 24*3600;
-    var n = 2;
+    var n = m.length;
     var all_forces = [];
     for(var ii = 0; ii < n; ii++) {
 	var tot_fx = 0;

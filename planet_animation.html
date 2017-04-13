@@ -75,11 +75,12 @@
             <div class="col-lg-8"> <!--container-->
                 <div class="row">
                     <h1>Solar System Evolution</h1>
-                    <div id="gbox" style="border: 2px solid black">
-                        <div id="graph"></div>
+                    <div id="gbox" style="border: 2px solid black" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div id="graph" style="text-align: center; width: 100%;"></div>
                     </div>
                     <br>
                     <button type="button" id="evolve" value="0" class="btn btn-primary" onclick="toggle_animate();">Start Evolution</button>
+                    <button type="button" id="addpt" value="0" class="btn btn-primary" onclick="add_random_point();">Add Random Point</button>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
                     <br>
                     <div id="info"></div>
@@ -89,7 +90,8 @@
 
     </div>
     <!-- /#wrapper -->
-    <script src="js/sliderevents.js"></script>
     <script src="js/plot_syst.js"></script>
+    <script src="js/sliderevents.js"></script>
+    <script src="js/buttonevents.js"></script>
 </body>
 </html>
