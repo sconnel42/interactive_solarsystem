@@ -8,41 +8,19 @@ var x = [0, -0.5*AU];
 var y = [0, 0];
 var vx = [0, 0];
 var vy = [-9.783*1000, 9.783*1000];
-function setVals(val) //A slider for each would be cooler.
-{
-    var m1 = document.getElementById('n1').value;
-    var m2 = document.getElementById('n2').value;
-    var xy1 = document.getElementById('n3').value;
-    var x1 = xy1.split(' ')[0];
-    var y1 = xy1.split(' ')[1];
-    var xy2 = document.getElementById('n4').value;
-    var x2 = xy2.split(' ')[0];
-    var y2 = xy2.split(' ')[1];
-    var vxy1 = document.getElementById('n5').value;
-    var vx1 = vxy1.split(' ')[0];
-    var vy1 = vxy1.split(' ')[1];
-    var vxy2 = document.getElementById('n6').value;
-    var vx2 = vxy2.split(' ')[0];
-    var vy2 = vxy2.split(' ')[1];
-    m[0] = Number(m1);
-    m[1] = Number(m2);
-    x[0] = Number(x1);
-    x[1] = Number(x2);
-    y[0] = Number(y1);
-    y[1] = Number(y2);
-    vx[0] = Number(vx1);
-    vx[1] = Number(vx2);
-    vy[0] = Number(vy1);
-    vy[1] = Number(vy2);
-    console.log(m[0]);
-    //alert("Parameters Set");
-}
 
 // Graph
 Plotly.plot('graph', [{
     x: x,
     y: y,
-    mode: 'markers'
+    mode: 'markers',
+    marker: {
+        color: x
+    },
+    colorbar: [
+        [0, 'rgb(0,255,255)'],
+        [1, 'rgb(255,255,0)']
+    ]
 }], {
     //paper_bgcolor: 'rgb(173, 252, 255)',
     //plot_bgcolor: 'rgb(173, 252, 255)',

@@ -7,6 +7,8 @@ $("#m1").on("slide", function(slideEvt) {
 $("#r1").bootstrapSlider();
 $("#r1").on("slide", function(slideEvt) {
     $("#r1SliderVal").text(slideEvt.value);
+    $(".earth").css("width", ""+slideEvt.value/1000);
+    $(".earth").css("height", ""+slideEvt.value/1000);
 });
 
 $("#v0").bootstrapSlider();
