@@ -15,11 +15,15 @@ Plotly.plot('graph', [{
     y: y,
     mode: 'markers',
     marker: {
-        color: x
+        color: m,
+        cmin: Math.pow(10,26),
+        cmax: Math.pow(10,30),
+        opacitysrc: 1.0
     },
     colorbar: [
-        [0, 'rgb(0,255,255)'],
-        [1, 'rgb(255,255,0)']
+        [0.0, 'rgb(0,0,255)'],
+        [0.5, 'rgb(255,255,0)'],
+        [1.0, 'rgb(255,165,0)']
     ]
 }], {
     //paper_bgcolor: 'rgb(173, 252, 255)',
