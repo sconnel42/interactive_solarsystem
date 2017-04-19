@@ -1,7 +1,12 @@
 // Change slider values when user moves slider
 $("#m1").bootstrapSlider();
 $("#m1").on("slide", function(slideEvt) {
-    $("#m1SliderVal").text(slideEvt.value);
+    var digits = slideEvt.value.toString().length;
+    var minex = 26;
+    var myex = minex + digits-1;
+    var num = slideEvt.value/Math.pow(10,digits-1);
+    $("#m1SliderVal").text(num);
+    $("#m1exp").text(myex);
 });
 
 $("#r1").bootstrapSlider();
