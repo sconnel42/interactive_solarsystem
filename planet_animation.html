@@ -39,33 +39,35 @@
         <nav class="navbar navbar-fixed-left" role="navigation">
             <ul style="width: 100%;">
                 <h3 style="color: white;">Insert New Body</h3>
+                <div>
                 <div id="planet1" class="earth" style="margin-left: auto; margin-right: auto;" draggable="true" ondragstart="drag(event)"></div>
+                </div>
                 <li><a href="#">Mass</a>
                 <br>
-		        <input id="m1" type="text" style="width: 100%;" data-slider-min="1" data-slider-max="10000" data-slider-step="10" data-slider-value="50" />
+		        <input id="m1" type="text" style="width: 100%;" data-slider-min="1" data-slider-max="10000" data-slider-step="10" data-slider-value="1" data-slider-tooltip="hide"/>
                 <br>
                     <span id="m1SliderVal">1.0</span><span>x10</span> <sup><span id="m1exp">26</span></sup><span>kg</span></li>
                 <br>
 
                 <li><a href="#">Radius</a>             
                 <br>
-		        <input id="r1" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="100000" data-slider-step="100" data-slider-value="9000" /> 
+		        <input id="r1" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="100000" data-slider-step="100" data-slider-value="9000" data-slider-tooltip="hide"/> 
                 <br>
-		        <span id="r1CurrentSliderValLabel">Radius(km): <span id="r1SliderVal">9000</span></span></li>
+			<span id="r1SliderVal">9.0</span><span>x10</span> <sup><span id="r1exp">3</span></sup><span>km</span></li>
                 <br>            
 
                 <li><a href="#">Initial Velocity</a>  
                 <br>
-		        <input id="v0" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="1000" data-slider-step="10" data-slider-value="30" /> 
+		        <input id="v0" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="1000" data-slider-step="10" data-slider-value="30" data-slider-tooltip="hide"/> 
                 <br>
-		        <span id="v0CurrentSliderValLabel">Velocity(km/s): <span id="v0SliderVal">30</span></span></li>
+                        <span id="v0SliderVal">30</span><span> km/s</span></li>
                 <br>
 
                 <li><a href="#">Initial Direction</a>     
                 <br>
-		        <input id="deg" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="359" data-slider-step="1" data-slider-value="0" /> 
+		        <input id="deg" type="text" style="width: 100%;" data-slider-min="0" data-slider-max="359" data-slider-step="1" data-slider-value="0" data-slider-tooltip="hide"/> 
                 <br>
-		        <span id="degCurrentSliderValLabel">Degrees(&deg;): <span id="degSliderVal">0</span></span></li>
+		        <span id="degCurrentSliderValLabel"><span id="degSliderVal">0</span>&deg;</span></li>
             </ul>
         </nav>
         </div>

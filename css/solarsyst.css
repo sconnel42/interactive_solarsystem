@@ -38,6 +38,20 @@ html,body
     animation-timing-function: linear;
 }
 
+.earth:before {
+    content: '';
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 0, 0, 0.9);
+  }
+
+/*.earth > * {
+    z-index: 10;
+}*/
+
 @keyframes rotate {
   from { background-position-x: 0px; }
   to { background-position-x: 210px; }

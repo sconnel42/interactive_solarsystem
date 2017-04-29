@@ -1,29 +1,44 @@
+// Set values on page load
+$(document).ready(function () {
+    var sliderval = $('#r1').val()
+    $('.earth').css('width', ""+sliderval/1000);
+    $('.earth').css('height', ""+sliderval/1000);
+});
+
+
 // Change slider values when user moves slider
 $("#m1").bootstrapSlider();
-$("#m1").on("slide", function(slideEvt) {
-    var digits = slideEvt.value.toString().length;
+$("#m1").on("change", function(slideEvt) {
+    var digits = slideEvt.value.newValue.toString().length;
     var minex = 26;
     var myex = minex + digits-1;
-    var num = slideEvt.value/Math.pow(10,digits-1);
-    $("#m1SliderVal").text(num);
+    var num = slideEvt.value.newValue/Math.pow(10,digits-1);
+    var output = parseFloat(Math.round(num * 100) / 100).toFixed(2);
+    $("#m1SliderVal").text(output);
     $("#m1exp").text(myex);
 });
 
 $("#r1").bootstrapSlider();
-$("#r1").on("slide", function(slideEvt) {
-    $("#r1SliderVal").text(slideEvt.value);
-    $(".earth").css("width", ""+slideEvt.value/1000);
-    $(".earth").css("height", ""+slideEvt.value/1000);
+$("#r1").on("change", function(slideEvt) {
+    var digits = slideEvt.value.newValue.toString().length;
+    var minex = 0;
+    var myex = minex + digits-1;
+    var num = slideEvt.value.newValue/Math.pow(10,digits-1);
+    var output = parseFloat(Math.round(num * 100) / 100).toFixed(2);
+    $("#r1SliderVal").text(output);
+    $("#r1exp").text(myex);
+    $(".earth").css("width", ""+slideEvt.value.newValue/1000);
+    $(".earth").css("height", ""+slideEvt.value.newValue/1000);
 });
 
 $("#v0").bootstrapSlider();
-$("#v0").on("slide", function(slideEvt) {
-    $("#v0SliderVal").text(slideEvt.value);
+$("#v0").on("change", function(slideEvt) {
+    $("#v0SliderVal").text(slideEvt.value.newValue);
 });
 
 $("#deg").bootstrapSlider();
-$("#deg").on("slide", function(slideEvt) {
-    $("#degSliderVal").text(slideEvt.value);
+$("#deg").on("change", function(slideEvt) {
+    $("#degSliderVal").text(slideEvt.value.newValue);
 });
 
 $('#evolve').click(function() {
@@ -45,12 +60,13 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
+var planet_count = 2;
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var node = document.getElementById(data).cloneNode(true);
-    node.id = "planet2";
-    ev.target.appendChild(node);
+    //var data = ev.dataTransfer.getData("text");
+    //var node = document.getElementById(data).cloneNode(true);
+    //node.id = "planet" + planet_count;
+    //ev.target.appendChild(node);
 
     var info = document.getElementById('info');
     var textbox = document.getElementById('gbox');
